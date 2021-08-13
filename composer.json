@@ -1,0 +1,36 @@
+{
+    "name": "macwinnie/twig-extensions",
+    "description": "Improving Twig by some filters",
+    "type": "library",
+    "license": "CC-BY-SA-4.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Martin Winter",
+            "email": "dev@macwinnie.me"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "macwinnie\\TwigExtensions\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4" : {
+            "macwinnie\\TestTwigExstensions\\" : "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/behat"
+    },
+    "require-dev": {
+        "behat/behat": "^3.8",
+        "phpunit/phpunit": "^9.5",
+        "twig/twig": "^3.3",
+        "twig/extra-bundle": "^3.3"
+    },
+    "require": {
+        "php": "^7.4 || ^8.0"
+    }
+}
