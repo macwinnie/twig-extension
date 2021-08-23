@@ -17,7 +17,7 @@ default: &default
         - "%paths.base%/tests/features"
 
       contexts:
-        - "macwinnie\\TestTwigExstensions\\TestContext"
+        - "macwinnie\\TestTwigExtensions\\TestContext"
 
 
   formatters:

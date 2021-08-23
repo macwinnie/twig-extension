@@ -1,6 +1,6 @@
 {
     "name": "macwinnie/twig-extensions",
-    "description": "Improving Twig by some filters",
+    "description": "Improving Twig by some filters, functions, etc.",
     "type": "library",
     "license": "CC-BY-SA-4.0",
     "minimum-stability": "dev",
@@ -18,7 +18,7 @@
     },
     "autoload-dev": {
         "psr-4" : {
-            "macwinnie\\TestTwigExstensions\\" : "tests/"
+            "macwinnie\\TestTwigExtensions\\" : "tests/"
         }
     },
     "scripts": {

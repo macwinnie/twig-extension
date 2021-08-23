@@ -1,6 +1,6 @@
 <?php
 
-namespace macwinnie\TestTwigExstensions;
+namespace macwinnie\TestTwigExtensions;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
