@@ -2,12 +2,18 @@
 
 namespace macwinnie\TwigExtensions;
 
+use Twig\TwigFunction;
+use Twig\Extension\AbstractExtension;
 use HaydenPierce\ClassFinder\ClassFinder;
+
+use macwinnie\TwigExtensions\Div\Functions as ExtensionFunctions;
+
+require_once( __DIR__ . '/helper/include.php' );
 
 /*
  * https://twig.symfony.com/doc/3.x/advanced.html#creating-an-extension
  */
-class All extends \Twig\Extension\AbstractExtension {
+class All extends AbstractExtension {
 
     private $classes = [];
 
@@ -31,11 +37,9 @@ class All extends \Twig\Extension\AbstractExtension {
      * function that adds new functions to Twig
      */
     public function getFunctions () {
-        $fkts = [];
-        foreach ( $this->classes as $c ) {
-            $hlpr = new $c;
-            $fkts = array_merge( $fkts, $hlpr->getFunctions() );
-        }
+        $fkts = [
+            new TwigFunction( 'env', [ new ExtensionFunctions(), 'twigEnv' ] ),
+        ];
         return $fkts;
     }
 
@@ -44,10 +48,6 @@ class All extends \Twig\Extension\AbstractExtension {
      */
     public function getFilters () {
         $fkts = [];
-        foreach ( $this->classes as $c ) {
-            $hlpr = new $c;
-            $fkts = array_merge( $fkts, $hlpr->getFilters() );
-        }
         return $fkts;
     }
 
@@ -56,10 +56,6 @@ class All extends \Twig\Extension\AbstractExtension {
      */
     public function getGlobals () {
         $fkts = [];
-        foreach ( $this->classes as $c ) {
-            $hlpr = new $c;
-            $fkts = array_merge( $fkts, $hlpr->getGlobals() );
-        }
         return $fkts;
     }
 
@@ -68,10 +64,6 @@ class All extends \Twig\Extension\AbstractExtension {
      */
     public function getOperators () {
         $fkts = [];
-        foreach ( $this->classes as $c ) {
-            $hlpr = new $c;
-            $fkts = array_merge( $fkts, $hlpr->getOperators() );
-        }
         return $fkts;
     }
 
@@ -80,10 +72,6 @@ class All extends \Twig\Extension\AbstractExtension {
      */
     public function getTests () {
         $fkts = [];
-        foreach ( $this->classes as $c ) {
-            $hlpr = new $c;
-            $fkts = array_merge( $fkts, $hlpr->getTests() );
-        }
         return $fkts;
     }
 }

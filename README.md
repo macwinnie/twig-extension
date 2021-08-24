@@ -2,6 +2,15 @@
 
 By this project, my most-used Twig extensions are bundled as a composer package.
 
+## Usage
+
+```php
+// ...
+$twig = new Twig_Environment( $loader, $options );
+$twig->addExtension( new use macwinnie\TwigExtensions\All() );
+// ...
+```
+
 ## last dependency update and test
 
 0000-00-00 00:00:00
