@@ -13,7 +13,7 @@ $twig->addExtension( new use macwinnie\TwigExtensions\All() );
 
 ## last dependency update and test
 
-2024-06-16 23:26:35
+2024-06-23 23:23:16
 
 ## Licence
 
