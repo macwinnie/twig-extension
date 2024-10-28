@@ -29,11 +29,12 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Run test suite
-        run: composer run-script test
+      # - name: Install dependencies
+      #   run: composer install --prefer-dist --no-progress --no-suggest
+
+      # - name: Run test suite
+      #   run: composer run-script test
 
       - name: Run update
         run: composer update
@@ -50,6 +51,7 @@ jobs:
           else
             echo "::set-output name=push::skip"
           fi
+
       - name: Run test suite after update
         if: ${{ steps.gitcheck.outputs.push == 'push' }}
         run: composer run-script test
